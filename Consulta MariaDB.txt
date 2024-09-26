@@ -1,0 +1,35 @@
+Enter password: ****
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 27
+Server version: 11.5.2-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE ejemplo;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [(none)]> USE ejemplo;
+Database changed
+MariaDB [ejemplo]> CREATE TABLE cliente (
+    -> No INT AUTO_INCREMENT PRIMARY KEY,
+    -> nombre VARCHAR(30),
+    -> telefono VARCHAR(15)
+    -> );
+Query OK, 0 rows affected (0.047 sec)
+
+MariaDB [ejemplo]> INSERT INTO cliente (nombre, telefono) VALUES ('Maria Lopez', '12345678'), ('Juan Perez', '87654321');
+Query OK, 2 rows affected (0.010 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [ejemplo]> SELECT * FROM cliente;
++----+-------------+----------+
+| No | nombre      | telefono |
++----+-------------+----------+
+|  1 | Maria Lopez | 12345678 |
+|  2 | Juan Perez  | 87654321 |
++----+-------------+----------+
+2 rows in set (0.001 sec)
+
+MariaDB [ejemplo]>
